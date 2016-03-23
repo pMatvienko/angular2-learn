@@ -1,15 +1,10 @@
 import {Component} from 'angular2/core';
-import {MyComponent} from './my.component';
+import {PuzzleComponent} from "./puzzle/puzzle.component";
 
 @Component({
     selector: 'my-app',
-    template: `
-        <h1>Angular 2 Boilerplate</h1>
-        <p>Hello World!</p>
-        <h2>And now goes My Component</h2>
-        <my></my>
-    `,
-    directives:[MyComponent]
+    template: `<my-puzzle></my-puzzle>`,
+    directives:[PuzzleComponent]
 })
 export class AppComponent {
 
