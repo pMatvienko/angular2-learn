@@ -5,30 +5,33 @@ body {
   font-size: 16px;
 }
 
-.setup, .puzzle{
-  padding:20px;
-  margin-bottom:30px;
-
-  h2{
-    margin:0;
-  }
+h2{
+  margin:0;
 }
 
-.setup{
-  border: 1px solid #CCC;
+.child{
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+.container{
+  border: 1px solid #CCCCCC;
   background-color: #dedede;
+  padding: 20px;
+}
+button{
+  padding: 4px;
+  background-color: white;
 }
 
-.puzzle{
-  border: 1px solid red;
-  background-color: #FFDBD6;
+button:not([disabled]){
+  cursor: pointer;
 }
 
-.puzzle.solved{
-  border: 1px solid green;
-  background-color: #CCFFDA;
+button:not([disabled]):hover{
+  background-color: salmon;
+  color: white;
 }
 
-.name{
+.highlight{
   font-weight: bold;
 }
