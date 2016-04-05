@@ -1,37 +1,70 @@
-body {
-  padding: 32px;
-  margin: 32px;
-  font-family: "Roboto", Arial, sans-serif;
+$mainColor: #1351af;
+$width: 60%;
+
+body{
+  padding: 0;
+  margin: 0;
   font-size: 16px;
 }
-
-h2{
-  margin:0;
+header{
+  background-color: $mainColor;
+  padding: 16px 0;
 }
-
-.child{
-  border: 1px solid #ccc;
-  padding: 20px;
+header .brand{
+  width: $width;
+  margin: auto;
+  color: white;
+  font-weight: bold;
+  font-size: 22px;
 }
-.container{
-  border: 1px solid #CCCCCC;
-  background-color: #dedede;
-  padding: 20px;
+.main{
+  width: $width;
+  margin: 32px;
+  padding: 16px;
+  border: 1px solid #ddd;
+  background-color: #eee;
+}
+.input{
+  margin-bottom: 8px;
+  display: inline-block;
+}
+.input input,
+.input label{
+  font-size: inherit;
+  display: block;
 }
 button{
-  padding: 4px;
+  font-size: inherit;
   background-color: white;
+  border: 1px solid;
 }
-
-button:not([disabled]){
+button:hover{
+  background-color: #ccc;
+}
+button.danger{
+  background-color: #ff3a3d;
+  color: #ffffff;
+  border: 1px solid red;
+}
+button.danger:hover{
+  background-color: #b8282a;
+}
+section{
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #000000;
+}
+#item-amt{
+  width: 55px;
+  text-align: center;
+}
+ul{
+  margin: 0;
+}
+ul li{
   cursor: pointer;
 }
-
-button:not([disabled]):hover{
-  background-color: salmon;
-  color: white;
-}
-
-.highlight{
+ul li:hover{
+  color: blue;
   font-weight: bold;
 }
