@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Output} from 'angular2/core';
+import {ListItem} from "../list-item";
 
 @Component({
     selector: 'shopping-list-new-item',
@@ -17,7 +18,7 @@ import {Component, EventEmitter, Output} from 'angular2/core';
 
 export class ShoppingListNewItemComponent{
     item = {name: '', amount: 0};
-    @Output('itemAdded') itemAdded = new EventEmitter<{name: string, amount: number}>();
+    @Output('itemAdded') itemAdded = new EventEmitter<ListItem>();
 
     onClick(){
         this.itemAdded.emit(this.item);

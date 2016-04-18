@@ -1,5 +1,7 @@
 import {Component} from 'angular2/core';
 import {ShoppingListNewItemComponent} from "./shopping-list-new-item";
+import {ListItem} from "../list-item";
+import {ShoppingListItemComponent} from "./shopping-list-item.component";
 
 @Component({
     selector: 'shopping-list',
@@ -11,7 +13,7 @@ import {ShoppingListNewItemComponent} from "./shopping-list-new-item";
     <h3>My List</h3>
     <div class="list">
         <ul>
-            <li *ngFor="#listItem of listItems" (click)="onSelect(listItems)">
+            <li *ngFor="#listItem of listItems" (click)="onSelect(listItem)">
                 {{listItem.name}} {{listItem.amount}}
             </li>
         </ul>
@@ -21,22 +23,22 @@ import {ShoppingListNewItemComponent} from "./shopping-list-new-item";
     <shopping-list-item [item]="selectedItem" (removed)="onRemove($event)"></shopping-list-item>
 </section>
 `,
-    directives:[ShoppingListNewItemComponent]
+    directives:[ShoppingListNewItemComponent, ShoppingListItemComponent]
 })
 
 export class ShoppingListComponent {
-    listItems = new Array<{name: string, amount: number}>();
-    selectedItem: {name: string, amount: number};
+    listItems = new Array<ListItem>();
+    selectedItem: ListItem;
 
-    onItemAdded (item: {name: string, amount: number}){
+    onItemAdded (item: ListItem){
         this.listItems.push({name: item.name, amount: item.amount});
     }
 
-    onSelect(item: {name: string, amount: number}){
+    onSelect(item: ListItem){
         this.selectedItem = item;
     }
 
-    onRemove(item: {name: string, amount: number}){
+    onRemove(item: ListItem){
         this.listItems.splice(this.listItems.indexOf(item),1);
         this.selectedItem = null;
     }
